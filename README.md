@@ -1,151 +1,186 @@
 # Olimax Rail — Landing Page
 
-Profesjonalna strona typu Landing Page dla firmy logistycznej Olimax Rail.  
-Stack: **React 18 + Vite + Tailwind CSS + Framer Motion + Lucide React**
+Profesjonalna strona Landing Page dla firmy logistycznej Olimax Rail.  
+Repozytorium: **https://github.com/Shareza/olimax-rail**
 
 ---
 
-## Wymagania wstępne
+## Instrukcja dla początkujących — od zera do działającej strony
 
-Przed uruchomieniem upewnij się, że masz zainstalowane:
-
-| Narzędzie | Minimalna wersja | Sprawdź komendą |
-|-----------|-----------------|-----------------|
-| Node.js   | 18+             | `node -v`       |
-| npm       | 9+              | `npm -v`        |
-
-Jeśli nie masz Node.js → pobierz ze strony: https://nodejs.org (wersja LTS)
+Wykonaj kroki **po kolei**. Każdy krok to kilka kliknięć lub wklejenie komendy do terminala.
 
 ---
 
-## Instalacja i uruchomienie
+### KROK 1 — Otwórz PowerShell
 
-### Windows — PowerShell (domyślny terminal)
+Naciśnij **Windows + R**, wpisz `powershell`, naciśnij Enter.  
+Otworzy się czarne okno z niebieskim tłem — to jest PowerShell, tu będziesz wklejać komendy.
 
-PowerShell domyślnie blokuje uruchamianie skryptów. Jednorazowo odblokuj dla swojego konta:
+> Jak wkleić komendę: skopiuj tekst → kliknij prawym przyciskiem myszy w oknie PowerShell → Enter.
+
+---
+
+### KROK 2 — Zainstaluj Node.js
+
+Node.js to silnik, który uruchamia aplikację.
+
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+Po zakończeniu **zamknij i otwórz PowerShell ponownie**, żeby zmiany weszły w życie.  
+Sprawdź czy instalacja się udała:
+
+```powershell
+node -v
+```
+
+Powinno wyświetlić coś w stylu `v20.x.x`. Jeśli tak — OK.
+
+---
+
+### KROK 3 — Zainstaluj Git
+
+Git to narzędzie do pobierania kodu z internetu.
+
+```powershell
+winget install Git.Git
+```
+
+Po zakończeniu **zamknij i otwórz PowerShell ponownie**.  
+Sprawdź:
+
+```powershell
+git --version
+```
+
+Powinno wyświetlić `git version 2.x.x`.
+
+---
+
+### KROK 4 — Odblokuj uruchamianie skryptów (jednorazowo)
+
+Windows domyślnie blokuje skrypty. To jednorazowa zmiana dla Twojego konta:
 
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ```
 
-Następnie zainstaluj zależności i uruchom projekt:
-
-```powershell
-cd C:\ścieżka\do\OlimaxRail
-npm install
-npm run dev
-```
-
-### Windows — Command Prompt (cmd.exe)
-
-Jeśli wolisz uniknąć zmiany polityk PowerShell, użyj zwykłego cmd:
-
-```cmd
-cd C:\ścieżka\do\OlimaxRail
-npm install
-npm run dev
-```
-
-### macOS / Linux
-
-```bash
-cd /ścieżka/do/OlimaxRail
-npm install
-npm run dev
-```
-
-Po uruchomieniu otwórz przeglądarkę pod adresem: **http://localhost:5173**
+Jeśli pojawi się pytanie — wpisz `T` i naciśnij Enter.
 
 ---
 
-## Dodanie filmu w tle (Hero Section)
+### KROK 5 — Pobierz projekt z GitHuba
 
-Strona działa bez filmu — sekcja Hero wyświetla wtedy eleganckie czarne tło z siatką.  
-Aby dodać wideo:
+Przejdź do folderu Pulpit i pobierz projekt:
 
-1. Przygotuj plik wideo w formacie **MP4** (koder H.264 dla najlepszej kompatybilności)
-2. Utwórz folder `public/videos/` w katalogu projektu
-3. Wrzuć plik do tego folderu i nazwij go dokładnie: **`rail-transport.mp4`**
-
-```
-OlimaxRail/
-└── public/
-    └── videos/
-        └── rail-transport.mp4   ← tutaj
+```powershell
+cd $HOME\Desktop
+git clone https://github.com/Shareza/olimax-rail.git
 ```
 
-### Wskazówki dotyczące wideo
+Powstanie folder `olimax-rail` na Pulpicie.
 
-- **Rozdzielczość:** 1920×1080 lub wyżej
-- **Długość:** 10–30 sekund (pętla działa automatycznie)
-- **Rozmiar pliku:** optymalnie poniżej 15 MB (skompresuj np. w HandBrake: https://handbrake.fr)
-- **Treść:** pędzący pociąg towarowy, kontenery, infrastruktura kolejowa, nocne tory z refleksami świateł
-- **Darmowe źródła wideo:** https://www.pexels.com/search/videos/train lub https://pixabay.com/videos
+---
+
+### KROK 6 — Wejdź do folderu projektu
+
+```powershell
+cd $HOME\Desktop\olimax-rail
+```
+
+---
+
+### KROK 7 — Zainstaluj zależności projektu
+
+```powershell
+npm install
+```
+
+Pobierze wszystkie biblioteki (może potrwać 1–2 minuty, nie przerywaj).
+
+---
+
+### KROK 8 — Uruchom aplikację
+
+```powershell
+npm run dev
+```
+
+Powinieneś zobaczyć:
+
+```
+  VITE v5.x.x  ready in xxx ms
+
+  ➜  Local:   http://localhost:5173/
+```
+
+Otwórz przeglądarkę i wejdź na: **http://localhost:5173**
+
+Strona działa. 🎉
+
+---
+
+### Żeby zatrzymać aplikację
+
+W oknie PowerShell naciśnij **Ctrl + C**.
+
+### Żeby uruchomić ponownie (kolejnym razem)
+
+Już nie musisz instalować Node.js, Git ani npm install — tylko:
+
+```powershell
+cd $HOME\Desktop\olimax-rail
+npm run dev
+```
+
+---
+
+## Najczęstsze problemy
+
+### `winget` nie jest rozpoznawany
+Zaktualizuj App Installer przez Microsoft Store, albo pobierz Node.js i Git ręcznie:
+- Node.js: https://nodejs.org (kliknij "LTS")
+- Git: https://git-scm.com/download/win
+
+### `npm : running scripts is disabled`
+Wróć do Kroku 4 i wykonaj komendę odblokowania.
+
+### `git clone` pyta o hasło / dostęp odmówiony
+Repozytorium jest publiczne — nie powinno pytać. Sprawdź czy adres URL jest przepisany dokładnie.
+
+### Port 5173 zajęty
+Vite sam wybierze inny port i pokaże go w terminalu.
+
+### Strona wygląda inaczej niż oczekiwano (brak czcionki)
+Potrzebne jest połączenie z internetem — czcionka Inter ładuje się z Google Fonts.
 
 ---
 
 ## Struktura projektu
 
 ```
-OlimaxRail/
+olimax-rail/
 ├── public/
 │   └── videos/
-│       └── rail-transport.mp4   ← wideo w tle (dodaj samodzielnie)
+│       └── rail-transport.mp4   ← film w tle Hero
 ├── src/
-│   ├── App.jsx                  ← cały kod strony (jeden plik)
+│   ├── App.jsx                  ← cały kod strony
 │   ├── main.jsx                 ← punkt wejścia React
-│   └── index.css                ← Tailwind CSS + globalne style
-├── index.html                   ← szkielet HTML + czcionka Inter
-├── package.json                 ← lista zależności
-├── vite.config.js               ← konfiguracja Vite
-├── tailwind.config.js           ← konfiguracja Tailwind
-└── postcss.config.js            ← konfiguracja PostCSS
+│   └── index.css                ← style globalne
+├── index.html
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
+└── postcss.config.js
 ```
 
 ---
 
-## Dostosowanie treści
+## Budowanie wersji do wgrania na hosting
 
-Wszystkie treści są w jednym pliku: `src/App.jsx`
-
-| Co zmienić | Gdzie szukać w App.jsx |
-|---|---|
-| Tytuł i podtytuł Hero | komponent `Hero` → tag `<h1>` |
-| Dane statystyk | komponent `Stats` → tablica `items` |
-| Opisy usług | komponent `Services` → tablica `services` |
-| Miasta na mapie | komponent `RouteMap` → tablica `cities` |
-| Dane kontaktowe | komponent `Contact` → tablica w sekcji "Left — info" |
-| Logo / nazwa firmy | komponenty `Nav` i `Footer` |
-
----
-
-## Budowanie wersji produkcyjnej
-
-```bash
+```powershell
 npm run build
 ```
 
-Gotowe pliki znajdziesz w folderze `dist/` — wgraj je na dowolny hosting statyczny  
-(np. Netlify, Vercel, GitHub Pages, hostinger).
-
----
-
-## Najczęstsze problemy
-
-### `npm : ...running scripts is disabled`
-Uruchom w PowerShell jako Administrator lub wykonaj:
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-```
-
-### `npm install` kończy się błędem ENOENT
-Upewnij się, że jesteś w folderze projektu (tam gdzie jest `package.json`):
-```bash
-cd C:\ścieżka\do\OlimaxRail
-```
-
-### Port 5173 zajęty
-Vite automatycznie wybierze następny wolny port. Sprawdź terminal — wyświetli aktualny adres.
-
-### Brakuje czcionki Inter / wygląd jest inny niż oczekiwano
-Sprawdź połączenie z internetem — czcionka ładuje się z Google Fonts przy pierwszym uruchomieniu.
+Gotowe pliki pojawią się w folderze `dist/` — wgraj je na dowolny hosting statyczny (Netlify, Vercel, GitHub Pages).
