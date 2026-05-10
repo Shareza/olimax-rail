@@ -51,9 +51,7 @@ function Nav() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3">
-          <div className="w-7 h-7 border border-white/25 grid place-items-center">
-            <Train size={13} className="text-white" />
-          </div>
+          <img src="/images/icon.png" alt="Olimax Rail icon" className="h-7 w-auto" />
           <span className="text-white text-xs font-light tracking-[0.25em] uppercase">
             Olimax <strong className="font-bold">Rail</strong>
           </span>
@@ -108,37 +106,20 @@ function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="flex items-center justify-center gap-4 mb-10"
-        >
-          <div className="w-14 h-px bg-white/20" />
-          <span className="text-white/35 text-[10px] tracking-[0.4em] uppercase">Globalny Transport Kolejowy</span>
-          <div className="w-14 h-px bg-white/20" />
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-10"
+          className="mb-10 mt-[50px]"
         >
-          <h1
-            className="font-black text-white uppercase mb-6 leading-none tracking-[-0.02em]"
-            style={{ fontSize: 'clamp(3.5rem, 11vw, 9rem)' }}
-          >
-            Olimax Rail
-          </h1>
+          <img
+            src="/images/olimax_rail_white.png"
+            alt="Olimax Rail"
+            className="mb-6 w-auto mx-auto"
+            style={{ maxHeight: 'clamp(3.5rem, 11vw, 9rem)' }}
+          />
 
-          <div className="flex items-center justify-center gap-5 mb-6">
-            <div className="flex-1 max-w-[120px] h-px bg-white/20" />
-            <p className="text-white/50 font-light tracking-[0.35em] uppercase"
-              style={{ fontSize: 'clamp(0.65rem, 1.5vw, 0.8rem)' }}>
-              Eurazjatycka Magistrala Logistyczna
-            </p>
-            <div className="flex-1 max-w-[120px] h-px bg-white/20" />
-          </div>
         </motion.div>
 
         <motion.p
@@ -547,7 +528,7 @@ function Contact() {
             </p>
             <div className="space-y-5">
               {[
-                { Icon: Mail,      label: 'E-mail',    val: 'logistics@olimaxrail.com'     },
+                { Icon: Mail,      label: 'E-mail',    val: 'test@email.com'     },
                 { Icon: Phone,     label: 'Telefon',   val: '+48 22 123 456 789'           },
                 { Icon: Building2, label: 'Siedziba',  val: 'ul. Kolejowa 1, 00-001 Warszawa' },
               ].map(({ Icon, label, val }) => (
@@ -675,9 +656,7 @@ function Footer() {
     <footer className="bg-[#030303] border-t border-white/5 py-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
-          <div className="w-7 h-7 border border-white/15 grid place-items-center">
-            <Train size={12} className="text-white/50" />
-          </div>
+          <img src="/images/icon.png" alt="Olimax Rail icon" className="h-7 w-auto" />
           <div>
             <div className="text-white text-xs tracking-[0.22em] font-light uppercase">
               Olimax <strong className="font-bold">Rail</strong>
